@@ -56,15 +56,39 @@
 		DA0541B02AF6D27700A08F9B /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				DA0541CC2AF6F6BC00A08F9B /* Sources */,
+				DA0541CB2AF6F6B300A08F9B /* Controllers */,
+				DA0541CA2AF6F66E00A08F9B /* Views */,
 				DA0541B12AF6D27700A08F9B /* AppDelegate.swift */,
-				DA0541C82AF6D38A00A08F9B /* RootViewController.swift */,
 				DA0541B32AF6D27700A08F9B /* SceneDelegate.swift */,
-				DA0541BD2AF6D27900A08F9B /* Assets.xcassets */,
-				DA0541BF2AF6D27900A08F9B /* LaunchScreen.storyboard */,
 				DA0541C22AF6D27900A08F9B /* Info.plist */,
 				DA0541BA2AF6D27700A08F9B /* RickAndMorty.xcdatamodeld */,
 			);
 			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		DA0541CA2AF6F66E00A08F9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA0541BF2AF6D27900A08F9B /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA0541CB2AF6F6B300A08F9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA0541C82AF6D38A00A08F9B /* RootViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DA0541CC2AF6F6BC00A08F9B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DA0541BD2AF6D27900A08F9B /* Assets.xcassets */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
