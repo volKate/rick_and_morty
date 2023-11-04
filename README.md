@@ -6,7 +6,7 @@ Test project
 
 - Launch Screen
 - Episodes (main screen of the app)
-- Character detailt (deyails page for selected character from selected episode)
+- Character details (details page for selected character from selected episode)
 - Favourites (episodes saved to favourites)
 
 ## Requirements
@@ -16,6 +16,6 @@ Test project
 - UI should be implemented in code
 - iOS Deployment Target 14.0
 
-## Festures implemented
+## Features implemented
 
-## Festures sum score
+## Features sum score
