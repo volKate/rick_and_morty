@@ -12,9 +12,12 @@
 		DA0541BC2AF6D27700A08F9B /* RickAndMorty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA0541BA2AF6D27700A08F9B /* RickAndMorty.xcdatamodeld */; };
 		DA0541BE2AF6D27900A08F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0541BD2AF6D27900A08F9B /* Assets.xcassets */; };
 		DA0541C12AF6D27900A08F9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0541BF2AF6D27900A08F9B /* LaunchScreen.storyboard */; };
-		DA0541C92AF6D38A00A08F9B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0541C82AF6D38A00A08F9B /* RootViewController.swift */; };
 		DA0541CE2AF7CC0000A08F9B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0541CD2AF7CC0000A08F9B /* LaunchScreenViewController.swift */; };
 		DA0541D02AF7CC3600A08F9B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0541CF2AF7CC3600A08F9B /* LaunchScreenView.swift */; };
+		DA66C3992AF7F9470088726B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3982AF7F9470088726B /* TabBarViewController.swift */; };
+		DA66C39B2AF7F9D50088726B /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C39A2AF7F9D50088726B /* EpisodesViewController.swift */; };
+		DA66C39D2AF7F9F20088726B /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C39C2AF7F9F20088726B /* FavouritesViewController.swift */; };
+		DA66C39F2AF7FF9F0088726B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C39E2AF7FF9F0088726B /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +28,12 @@
 		DA0541BD2AF6D27900A08F9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA0541C02AF6D27900A08F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA0541C22AF6D27900A08F9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA0541C82AF6D38A00A08F9B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		DA0541CD2AF7CC0000A08F9B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		DA0541CF2AF7CC3600A08F9B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		DA66C3982AF7F9470088726B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		DA66C39A2AF7F9D50088726B /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		DA66C39C2AF7F9F20088726B /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		DA66C39E2AF7FF9F0088726B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +89,11 @@
 		DA0541CB2AF6F6B300A08F9B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DA0541C82AF6D38A00A08F9B /* RootViewController.swift */,
 				DA0541CD2AF7CC0000A08F9B /* LaunchScreenViewController.swift */,
+				DA66C3982AF7F9470088726B /* TabBarViewController.swift */,
+				DA66C39A2AF7F9D50088726B /* EpisodesViewController.swift */,
+				DA66C39C2AF7F9F20088726B /* FavouritesViewController.swift */,
+				DA66C39E2AF7FF9F0088726B /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,10 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA66C39D2AF7F9F20088726B /* FavouritesViewController.swift in Sources */,
 				DA0541BC2AF6D27700A08F9B /* RickAndMorty.xcdatamodeld in Sources */,
+				DA66C39F2AF7FF9F0088726B /* DetailsViewController.swift in Sources */,
 				DA0541B22AF6D27700A08F9B /* AppDelegate.swift in Sources */,
-				DA0541C92AF6D38A00A08F9B /* RootViewController.swift in Sources */,
+				DA66C39B2AF7F9D50088726B /* EpisodesViewController.swift in Sources */,
 				DA0541CE2AF7CC0000A08F9B /* LaunchScreenViewController.swift in Sources */,
+				DA66C3992AF7F9470088726B /* TabBarViewController.swift in Sources */,
 				DA0541B42AF6D27700A08F9B /* SceneDelegate.swift in Sources */,
 				DA0541D02AF7CC3600A08F9B /* LaunchScreenView.swift in Sources */,
 			);

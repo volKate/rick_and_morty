@@ -22,11 +22,15 @@ class LaunchScreenViewController: UIViewController {
     // redirect to root VC after 3 seconds
     DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
       self.continueAnimate = false
-
-      let rootVC = RootViewController()
-      rootVC.modalPresentationStyle = .fullScreen
-      self.present(rootVC, animated: true)
+      self.redirectToRootVC()
     })
+  }
+
+  private func redirectToRootVC() {
+    let rootVC = TabBarViewController()
+
+    rootVC.modalPresentationStyle = .fullScreen
+    present(rootVC, animated: true)
   }
 
   private func animateLoading() {
