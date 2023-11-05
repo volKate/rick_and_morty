@@ -13,6 +13,8 @@
 		DA0541BE2AF6D27900A08F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0541BD2AF6D27900A08F9B /* Assets.xcassets */; };
 		DA0541C12AF6D27900A08F9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0541BF2AF6D27900A08F9B /* LaunchScreen.storyboard */; };
 		DA0541C92AF6D38A00A08F9B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0541C82AF6D38A00A08F9B /* RootViewController.swift */; };
+		DA0541CE2AF7CC0000A08F9B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0541CD2AF7CC0000A08F9B /* LaunchScreenViewController.swift */; };
+		DA0541D02AF7CC3600A08F9B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0541CF2AF7CC3600A08F9B /* LaunchScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DA0541C02AF6D27900A08F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA0541C22AF6D27900A08F9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA0541C82AF6D38A00A08F9B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DA0541CD2AF7CC0000A08F9B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		DA0541CF2AF7CC3600A08F9B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0541BF2AF6D27900A08F9B /* LaunchScreen.storyboard */,
+				DA0541CF2AF7CC3600A08F9B /* LaunchScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -79,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0541C82AF6D38A00A08F9B /* RootViewController.swift */,
+				DA0541CD2AF7CC0000A08F9B /* LaunchScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,7 +170,9 @@
 				DA0541BC2AF6D27700A08F9B /* RickAndMorty.xcdatamodeld in Sources */,
 				DA0541B22AF6D27700A08F9B /* AppDelegate.swift in Sources */,
 				DA0541C92AF6D38A00A08F9B /* RootViewController.swift in Sources */,
+				DA0541CE2AF7CC0000A08F9B /* LaunchScreenViewController.swift in Sources */,
 				DA0541B42AF6D27700A08F9B /* SceneDelegate.swift in Sources */,
+				DA0541D02AF7CC3600A08F9B /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
