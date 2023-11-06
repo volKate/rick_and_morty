@@ -16,6 +16,8 @@ class EpisodesView: UIView {
     return view
   }()
 
+  let collection = EpisodesCollectionView()
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     translatesAutoresizingMaskIntoConstraints = false
@@ -26,14 +28,21 @@ class EpisodesView: UIView {
 
   private func setupSubviews() {
     addSubview(logo)
+    addSubview(collection)
   }
 
   private func setupConstraints() {
-    // logo constraints
     NSLayoutConstraint.activate([
+      // logo constraints
       logo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 48),
       logo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
-      logo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24)
+      logo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24),
+
+      // collection constraints
+      collection.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 48),
+      collection.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+      collection.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+      collection.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
     ])
   }
   

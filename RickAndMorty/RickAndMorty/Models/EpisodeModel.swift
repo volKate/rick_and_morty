@@ -10,5 +10,5 @@ import Foundation
 struct EpisodeModel {
   let episode: String
   let name: String
-  let character: CharacterModel
+  let character: String
 }

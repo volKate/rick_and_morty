@@ -25,6 +25,8 @@
 		DA66C3AB2AF814FC0088726B /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3AA2AF814FC0088726B /* CharacterData.swift */; };
 		DA66C3AD2AF8157F0088726B /* EpisodesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3AC2AF8157F0088726B /* EpisodesManager.swift */; };
 		DA66C3AF2AF81BA90088726B /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3AE2AF81BA90088726B /* CharacterManager.swift */; };
+		DA66C3B12AF986620088726B /* EpisodesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3B02AF986620088726B /* EpisodesCollectionView.swift */; };
+		DA66C3B32AF98CF60088726B /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3B22AF98CF60088726B /* EpisodeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		DA66C3AA2AF814FC0088726B /* CharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
 		DA66C3AC2AF8157F0088726B /* EpisodesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesManager.swift; sourceTree = "<group>"; };
 		DA66C3AE2AF81BA90088726B /* CharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterManager.swift; sourceTree = "<group>"; };
+		DA66C3B02AF986620088726B /* EpisodesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCollectionView.swift; sourceTree = "<group>"; };
+		DA66C3B22AF98CF60088726B /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				DA66C3A12AF805070088726B /* EpisodesView.swift */,
+				DA66C3B02AF986620088726B /* EpisodesCollectionView.swift */,
+				DA66C3B22AF98CF60088726B /* EpisodeCell.swift */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -229,6 +235,8 @@
 				DA66C3992AF7F9470088726B /* TabBarViewController.swift in Sources */,
 				DA0541B42AF6D27700A08F9B /* SceneDelegate.swift in Sources */,
 				DA0541D02AF7CC3600A08F9B /* LaunchScreenView.swift in Sources */,
+				DA66C3B12AF986620088726B /* EpisodesCollectionView.swift in Sources */,
+				DA66C3B32AF98CF60088726B /* EpisodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,29 +31,7 @@ struct EpisodesManager {
         }
 
         if let data, let episodes = parseJSON(episodesData: data) {
-          var episodesWithCharacters: [EpisodeModel] = []
-          episodes.forEach { episode in
-            if let characterUrl = episode.characters.randomElement() {
-              characterManager.loadCharacter(with: characterUrl) { character, error in
-                if error != nil {
-                  print("error loading character")
-                }
-
-                if let character {
-                  episodesWithCharacters.append(
-                    EpisodeModel(
-                      episode: episode.episode,
-                      name: episode.name,
-                      character: character
-                    )
-                  )
-                }
-
-              }
-            }
-          }
-
-          delegate?.didLoadEpisodes(self, episodes: episodesWithCharacters)
+          delegate?.didLoadEpisodes(self, episodes: episodes)
         }
       }
 
@@ -61,11 +39,17 @@ struct EpisodesManager {
     }
   }
 
-  private func parseJSON(episodesData: Data) -> [Episode]? {
+  private func parseJSON(episodesData: Data) -> [EpisodeModel]? {
     let decoder = JSONDecoder()
     do {
       let decodedData = try decoder.decode(EpisodesData.self, from: episodesData)
-      return decodedData.results
+      return decodedData.results.map { data in
+        EpisodeModel(
+          episode: data.episode,
+          name: data.name,
+          character: data.characters.randomElement() ?? ""
+        )
+      }
     } catch {
       print("error decoding data")
       delegate?.didEndupWithError(self, error: error)
