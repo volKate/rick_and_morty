@@ -30,6 +30,7 @@ class LaunchScreenViewController: UIViewController {
     let rootVC = TabBarViewController()
 
     rootVC.modalPresentationStyle = .fullScreen
+    rootVC.modalTransitionStyle = .crossDissolve
     present(rootVC, animated: true)
   }
 
