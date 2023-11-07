@@ -22,5 +22,13 @@ Test project
 - Animate "portal" to spin when screen is visible +2
 - redirect to Episodes screen after three seconds
 
+### Episodes
+- Add TabBar with two tabs: episodes, favourites +1
+- On Episodes and Favourites pages add UINavigationController +1
+- Use UICollectionView to create episodes collection +1
+- Implement setting episode name and code +2
+- Implement setting random character name and Image +3
+
+
 ## Features sum score
-**3**
+**11**
