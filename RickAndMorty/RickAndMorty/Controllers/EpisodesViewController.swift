@@ -10,6 +10,7 @@ import UIKit
 class EpisodesViewController: UIViewController {
   private let episodesView = EpisodesView()
   private var episodesManager = EpisodesManager()
+  private var nextPageUrl: String?
 
   var episodes: [EpisodeModel] = []
 
@@ -43,7 +44,7 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return episodes.count
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = episodesView.collection.dequeueReusableCell(withReuseIdentifier: "episode_cell", for: indexPath) as! EpisodeCell
     let episode = episodes[indexPath.row]
@@ -51,6 +52,12 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
     cell.updateEpisodeName(name)
     cell.updateCharacterUrl(episode.character)
     return cell
+  }
+
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    if (indexPath.row == episodes.count - 4) {
+      episodesManager.loadEpisodes(nextPageUrl: nextPageUrl)
+    }
   }
 
 }
@@ -66,21 +73,20 @@ extension EpisodesViewController: UICollectionViewDelegateFlowLayout {
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-      section == 0 ?
-        UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0) :
-        UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    UIEdgeInsets(top: 5, left: 0, bottom: 24, right: 0)
   }
 }
 
 extension EpisodesViewController: EpisodesManagerDelegate {
-  func didLoadEpisodes(_ episodesManager: EpisodesManager, episodes: [EpisodeModel]) {
+  func didLoadEpisodes(_ episodesManager: EpisodesManager, episodes: [EpisodeModel], pagesInfo: EpisodesData.Info) {
+    nextPageUrl = pagesInfo.next
     DispatchQueue.main.async {
-      self.episodes = episodes
+      self.episodes += episodes
       self.episodesView.collection.reloadData()
     }
   }
-  
-  func didEndupWithError(_ episodesManager: EpisodesManager, error: Error) {
+
+  func didEndupWithError(error: Error) {
     // handle error
   }
 

@@ -10,11 +10,11 @@ import Foundation
 struct EpisodesData: Decodable {
   let results: [Episode]
   let info: Info
-}
 
-struct Info: Decodable {
-  let pages: Int
-  let next: String
+  struct Info: Decodable {
+    let pages: Int
+    let next: String?
+  }
 }
 
 struct Episode: Decodable {
