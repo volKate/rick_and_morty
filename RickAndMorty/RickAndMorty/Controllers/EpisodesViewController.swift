@@ -49,6 +49,7 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
     let episode = episodes[indexPath.row]
     let name = "\(episode.name) | \(episode.episode)"
     cell.updateEpisodeName(name)
+    cell.updateCharacterUrl(episode.character)
     return cell
   }
 

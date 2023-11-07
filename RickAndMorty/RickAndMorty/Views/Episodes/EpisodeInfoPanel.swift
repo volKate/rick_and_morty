@@ -27,6 +27,9 @@ class EpisodeInfoPanel: UIView {
     view.text = ""
     view.font = .systemFont(ofSize: 16.0, weight: .regular)
     view.backgroundColor = .clear
+    view.isScrollEnabled = false
+    view.isEditable = false
+    view.isSelectable = false
     view.translatesAutoresizingMaskIntoConstraints = false
 
     return view
