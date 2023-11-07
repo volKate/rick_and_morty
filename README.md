@@ -28,7 +28,8 @@ Test project
 - Use UICollectionView to create episodes collection +1
 - Implement setting episode name and code +2
 - Implement setting random character name and Image +3
+- Implement pagination for episodes. More episodes are loaded when close to scroll bottom +3
 
 
 ## Features sum score
-**11**
+**14**
