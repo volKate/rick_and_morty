@@ -46,7 +46,9 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = episodesView.collection.dequeueReusableCell(withReuseIdentifier: "episode_cell", for: indexPath) as! EpisodeCell
-    cell.updateName(episodes[indexPath.row].episode)
+    let episode = episodes[indexPath.row]
+    let name = "\(episode.name) | \(episode.episode)"
+    cell.updateEpisodeName(name)
     return cell
   }
 
@@ -56,6 +58,16 @@ extension EpisodesViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let spacing: CGFloat = 24.0
     return CGSize(width: collectionView.bounds.width - spacing * 2.0, height: 357.0)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    56.0
+  }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+      section == 0 ?
+        UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0) :
+        UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
   }
 }
 
