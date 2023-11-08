@@ -25,6 +25,8 @@ class DetailsHeaderView: UIView {
     label.text = ""
     label.font = .systemFont(ofSize: 32.0)
     label.textAlignment = .center
+    label.numberOfLines = 2
+    label.adjustsFontSizeToFitWidth = true
 
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -50,7 +52,7 @@ class DetailsHeaderView: UIView {
       characterImage.heightAnchor.constraint(lessThanOrEqualToConstant: 150.0),
       characterImage.widthAnchor.constraint(lessThanOrEqualToConstant: 150.0),
 
-      characterName.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 48.0),
+      characterName.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 24.0),
       characterName.leadingAnchor.constraint(equalTo: leadingAnchor),
       characterName.trailingAnchor.constraint(equalTo: trailingAnchor),
       characterName.bottomAnchor.constraint(equalTo: bottomAnchor)

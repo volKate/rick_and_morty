@@ -9,6 +9,7 @@ import UIKit
 
 class DetailsView: UIView {
   let detailsHeader = DetailsHeaderView()
+  let detailsTable = DetailsTableView()
 
   var informationsLabel: UILabel = {
     var label = UILabel()
@@ -32,17 +33,23 @@ class DetailsView: UIView {
   private func setupSubviews() {
     addSubview(detailsHeader)
     addSubview(informationsLabel)
+    addSubview(detailsTable)
   }
 
   private func setupConstraints() {
     NSLayoutConstraint.activate([
-      detailsHeader.topAnchor.constraint(equalTo: topAnchor, constant: 64.0),
+      detailsHeader.topAnchor.constraint(equalTo: topAnchor, constant: 32.0),
       detailsHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.0),
       detailsHeader.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24.0),
 
       informationsLabel.topAnchor.constraint(equalTo: detailsHeader.bottomAnchor, constant: 16.0),
       informationsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.0),
-      informationsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24.0)
+      informationsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24.0),
+
+      detailsTable.topAnchor.constraint(equalTo: informationsLabel.bottomAnchor, constant: 25),
+      detailsTable.leadingAnchor.constraint(equalTo: leadingAnchor),
+      detailsTable.trailingAnchor.constraint(equalTo: trailingAnchor),
+      detailsTable.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
   }
 

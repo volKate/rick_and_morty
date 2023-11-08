@@ -28,6 +28,7 @@ class EpisodeInfoPanel: UIView {
     view.font = .systemFont(ofSize: 16.0, weight: .regular)
     view.backgroundColor = .clear
     view.numberOfLines = 2
+    view.adjustsFontSizeToFitWidth = true
 
     view.translatesAutoresizingMaskIntoConstraints = false
 

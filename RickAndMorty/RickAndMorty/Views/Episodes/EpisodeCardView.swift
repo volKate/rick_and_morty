@@ -28,6 +28,7 @@ class EpisodeCardView: UIView {
     view.text = ""
     view.font = .systemFont(ofSize: 20.0, weight: .semibold)
     view.backgroundColor = .clear
+    view.adjustsFontSizeToFitWidth = true
     view.translatesAutoresizingMaskIntoConstraints = false
 
     return view

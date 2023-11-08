@@ -15,8 +15,10 @@ class DetailsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationController?.setNavigationBarHidden(false, animated: false)
     view.backgroundColor = .systemBackground
+
+    detailsView.detailsTable.delegate = self
+    detailsView.detailsTable.dataSource = self
 
     setupSubviews()
     updateUI()
@@ -38,8 +40,29 @@ class DetailsViewController: UIViewController {
     detailsView.detailsHeader.characterName.text = character.name
   }
 
-  override func viewWillDisappear(_ animated: Bool) {
-    navigationController?.setNavigationBarHidden(true, animated: false)
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(false, animated: false)
+  }
+
+}
+
+extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    6
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = detailsView.detailsTable.dequeueReusableCell(withIdentifier: "details_cell") as! DetailsCell
+    let titles = ["Gender", "Status", "Species", "Origin", "Type", "Location"]
+    let values = [character.gender, character.status, character.species, character.origin, character.type, character.location]
+    if titles.indices.contains(indexPath.row) && values.indices.contains(indexPath.row) {
+      let value = values[indexPath.row]
+
+      cell.titleLabel.text = titles[indexPath.row]
+      cell.valueLabel.text = value == "" ? "Unknown" : value
+    }
+
+    return cell
   }
 
 }

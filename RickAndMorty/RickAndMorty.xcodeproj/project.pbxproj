@@ -32,6 +32,8 @@
 		DA66C3BA2AFACFEB0088726B /* EpisodeInfoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3B92AFACFEB0088726B /* EpisodeInfoPanel.swift */; };
 		DA66C3BD2AFC1CF90088726B /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3BC2AFC1CF90088726B /* DetailsView.swift */; };
 		DA66C3BF2AFC1D690088726B /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3BE2AFC1D690088726B /* DetailsHeaderView.swift */; };
+		DAFE73552AFC2C4F00A867FE /* DetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */; };
+		DAFE73572AFC2DDA00A867FE /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		DA66C3B92AFACFEB0088726B /* EpisodeInfoPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeInfoPanel.swift; sourceTree = "<group>"; };
 		DA66C3BC2AFC1CF90088726B /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		DA66C3BE2AFC1D690088726B /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
+		DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableView.swift; sourceTree = "<group>"; };
+		DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 			children = (
 				DA66C3BC2AFC1CF90088726B /* DetailsView.swift */,
 				DA66C3BE2AFC1D690088726B /* DetailsHeaderView.swift */,
+				DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */,
+				DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 				DA0541B22AF6D27700A08F9B /* AppDelegate.swift in Sources */,
 				DA66C3A22AF805070088726B /* EpisodesView.swift in Sources */,
 				DA66C3BF2AFC1D690088726B /* DetailsHeaderView.swift in Sources */,
+				DAFE73572AFC2DDA00A867FE /* DetailsCell.swift in Sources */,
 				DA66C3A52AF80F4B0088726B /* EpisodeModel.swift in Sources */,
 				DA66C3B62AFAB2410088726B /* CardView.swift in Sources */,
 				DA66C39B2AF7F9D50088726B /* EpisodesViewController.swift in Sources */,
@@ -268,6 +275,7 @@
 				DA66C3992AF7F9470088726B /* TabBarViewController.swift in Sources */,
 				DA0541B42AF6D27700A08F9B /* SceneDelegate.swift in Sources */,
 				DA0541D02AF7CC3600A08F9B /* LaunchScreenView.swift in Sources */,
+				DAFE73552AFC2C4F00A867FE /* DetailsTableView.swift in Sources */,
 				DA66C3BD2AFC1CF90088726B /* DetailsView.swift in Sources */,
 				DA66C3B12AF986620088726B /* EpisodesCollectionView.swift in Sources */,
 				DA66C3B82AFAC0510088726B /* EpisodeCardView.swift in Sources */,

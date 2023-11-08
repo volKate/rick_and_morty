@@ -20,8 +20,6 @@ class EpisodesViewController: UIViewController {
     episodesView.collection.dataSource = self
     episodesView.collection.delegate = self
 
-    navigationController?.setNavigationBarHidden(true, animated: false)
-
     episodesManager.loadEpisodes()
 
     setupSubviews()
@@ -61,6 +59,9 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
     }
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(true, animated: false)
+  }
 }
 
 extension EpisodesViewController: UICollectionViewDelegateFlowLayout {
