@@ -31,6 +31,7 @@ class EpisodeCell: UICollectionViewCell {
     if let character {
       let detailsVC = DetailsViewController()
       detailsVC.character = character
+      detailsVC.characterImage = card.characterImage.image
       navVC.pushViewController(detailsVC, animated: true)
     }
   }
