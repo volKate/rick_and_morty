@@ -47,6 +47,7 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = episodesView.collection.dequeueReusableCell(withReuseIdentifier: "episode_cell", for: indexPath) as! EpisodeCell
+    cell.navVC = navigationController
     let episode = episodes[indexPath.row]
     let name = "\(episode.name) | \(episode.episode)"
     cell.updateEpisodeName(name)

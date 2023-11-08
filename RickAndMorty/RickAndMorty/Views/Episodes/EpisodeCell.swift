@@ -11,6 +11,7 @@ class EpisodeCell: UICollectionViewCell {
   var card = EpisodeCardView()
   var characterManager = CharacterManager()
   var character: CharacterModel?
+  var navVC: UINavigationController!
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -18,6 +19,20 @@ class EpisodeCell: UICollectionViewCell {
     characterManager.delegate = self
 
     setupSubviews()
+    setupCharacterImageTapGesture()
+  }
+
+  private func setupCharacterImageTapGesture() {
+    let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapCharacterImage(_:)))
+    card.characterImage.addGestureRecognizer(gesture)
+  }
+
+  @objc private func didTapCharacterImage(_ sender: UITapGestureRecognizer) {
+    if let character {
+      let detailsVC = DetailsViewController()
+      detailsVC.character = character
+      navVC.pushViewController(detailsVC, animated: true)
+    }
   }
 
   func updateEpisodeName(_ name: String) {

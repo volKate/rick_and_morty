@@ -16,6 +16,7 @@ class EpisodeCardView: UIView {
     let view = UIImageView(image: imagePlaceholder)
     view.contentMode = .scaleAspectFill
     view.clipsToBounds = true
+    view.isUserInteractionEnabled = true
 
     view.translatesAutoresizingMaskIntoConstraints = false
 

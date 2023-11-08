@@ -8,12 +8,16 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+  var character: CharacterModel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .green
+    navigationController?.setNavigationBarHidden(false, animated: false)
+    view.backgroundColor = .systemBackground
+  }
 
-    // Do any additional setup after loading the view.
+  override func viewWillDisappear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(true, animated: false)
   }
 
 }
