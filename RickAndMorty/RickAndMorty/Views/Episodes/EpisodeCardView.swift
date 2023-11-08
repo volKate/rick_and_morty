@@ -29,6 +29,7 @@ class EpisodeCardView: UIView {
     view.isScrollEnabled = false
     view.isEditable = false
     view.isSelectable = false
+    view.backgroundColor = .clear
     view.translatesAutoresizingMaskIntoConstraints = false
 
     return view
