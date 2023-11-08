@@ -29,7 +29,13 @@ Test project
 - Implement setting episode name and code +2
 - Implement setting random character name and Image +3
 - Implement pagination for episodes. More episodes are loaded when close to scroll bottom +3
+- On character image tap open details page +1
+
+### Details page
+- Implment Details page +1
+- Use UITableView to implement details +2
+
 
 
 ## Features sum score
-**14**
+**18**
