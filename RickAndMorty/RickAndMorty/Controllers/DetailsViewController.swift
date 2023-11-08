@@ -28,10 +28,10 @@ class DetailsViewController: UIViewController {
     view.addSubview(detailsView)
 
     NSLayoutConstraint.activate([
-      detailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      detailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      detailsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      detailsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
       detailsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      detailsView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+      detailsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
   }
 
