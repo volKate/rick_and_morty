@@ -34,8 +34,9 @@ Test project
 ### Details page
 - Implment Details page +1
 - Use UITableView to implement details +2
+-- Add icon to NavBar +2
 
 
 
 ## Features sum score
-**18**
+**20**
