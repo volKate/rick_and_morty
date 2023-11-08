@@ -22,14 +22,13 @@ class EpisodeInfoPanel: UIView {
     return view
   }()
 
-  var episodeName: UITextView = {
-    let view = UITextView()
+  var episodeName: UILabel = {
+    let view = UILabel()
     view.text = ""
     view.font = .systemFont(ofSize: 16.0, weight: .regular)
     view.backgroundColor = .clear
-    view.isScrollEnabled = false
-    view.isEditable = false
-    view.isSelectable = false
+    view.numberOfLines = 2
+
     view.translatesAutoresizingMaskIntoConstraints = false
 
     return view

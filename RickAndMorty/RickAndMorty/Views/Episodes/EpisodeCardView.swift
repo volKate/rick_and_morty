@@ -23,13 +23,10 @@ class EpisodeCardView: UIView {
     return view
   }()
 
-  var characterName: UITextView = {
-    let view = UITextView()
+  var characterName: UILabel = {
+    let view = UILabel()
     view.text = ""
     view.font = .systemFont(ofSize: 20.0, weight: .semibold)
-    view.isScrollEnabled = false
-    view.isEditable = false
-    view.isSelectable = false
     view.backgroundColor = .clear
     view.translatesAutoresizingMaskIntoConstraints = false
 
