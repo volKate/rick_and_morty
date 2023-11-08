@@ -19,7 +19,7 @@ class DetailsCell: UITableViewCell {
   var valueLabel: UILabel = {
     let view = UILabel()
     view.font = .systemFont(ofSize: 14.0)
-    view.textColor = UIColor(named: "gray_dark")
+    view.textColor = UIColor(named: "text_secondary")
 
     view.translatesAutoresizingMaskIntoConstraints = false
     return view

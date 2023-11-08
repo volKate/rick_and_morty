@@ -45,7 +45,7 @@ class DetailsViewController: UIViewController {
     navigationController?.setNavigationBarHidden(false, animated: false)
     let buttonItem = UIBarButtonItem(image: UIImage(named: "mini_logo"), style: .plain, target: nil, action: nil)
     navigationItem.rightBarButtonItem = buttonItem
-    navigationController?.navigationBar.tintColor = .black
+    navigationController?.navigationBar.tintColor = UIColor(named: "text_main")
   }
 
 }

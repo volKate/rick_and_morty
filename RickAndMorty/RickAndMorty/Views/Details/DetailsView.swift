@@ -15,7 +15,7 @@ class DetailsView: UIView {
     var label = UILabel()
     label.text = "Informations"
     label.font = .systemFont(ofSize: 20.0, weight: .medium)
-    label.textColor = UIColor(named: "gray_dark")
+    label.textColor = UIColor(named: "text_secondary")
 
     label.translatesAutoresizingMaskIntoConstraints = false
     return label

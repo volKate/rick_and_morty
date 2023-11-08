@@ -63,10 +63,9 @@ class EpisodeCardView: UIView {
       characterImage.trailingAnchor.constraint(equalTo: card.trailingAnchor),
       characterImage.topAnchor.constraint(equalTo: card.topAnchor),
 
-      characterName.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 8),
+      characterName.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 16.0),
       characterName.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16.0),
       characterName.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -16.0),
-      characterName.heightAnchor.constraint(equalToConstant: 36.0),
 
       episodeInfoPanel.topAnchor.constraint(equalTo: characterName.bottomAnchor, constant: 16.0),
       episodeInfoPanel.leadingAnchor.constraint(equalTo: card.leadingAnchor),
