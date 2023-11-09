@@ -30,7 +30,7 @@ struct EpisodesManager {
       return
     }
     previousPageUrl = episodeUrl
-    let urlString = episodeUrl + "/\(ids.map { "\($0)" }.joined(separator: ","))"
+    let urlString = episodeUrl + "/[\(ids.map { "\($0)" }.joined(separator: ","))]"
     fetchSimplifiedData(for: urlString)
   }
 

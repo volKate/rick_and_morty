@@ -10,6 +10,7 @@ import UIKit
 class FavouritesViewController: UIViewController {  
   private let collection = EpisodesCollectionView()
   private var episodesManager = EpisodesManager()
+  private var latestFavs: Set<Int> = Set()
   var appManager: AppManager?
 
   var episodes: [EpisodeModel] = []
@@ -41,6 +42,11 @@ class FavouritesViewController: UIViewController {
     navigationItem.backButtonTitle = "Go back".uppercased()
     navigationItem.title = "Favourite Episodes"
 
+    // uncomment to keep characters from changing after going back from details page
+//    if appManager?.favourites != nil && latestFavs != appManager?.favourites {
+//      latestFavs = appManager!.favourites
+//      episodesManager.loadEpisodes(ids: Array(appManager!.favourites))
+//    }
     episodesManager.loadEpisodes(ids: Array(appManager?.favourites ?? []))
   }
 
