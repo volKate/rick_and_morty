@@ -34,9 +34,12 @@ Test project
 ### Details page
 - Implment Details page +1
 - Use UITableView to implement details +2
--- Add icon to NavBar +2
+- Add icon to NavBar +2
 
-
+### Favourites
+- Implement screen +1
+- Tap on heart should remove episode from favourites +1 (I let episodes remain on the creen from UX point of view, but they are removed from array and on re-entering the page, they will no longer appear on screen)
+- On character image tap open details page +1
 
 ## Features sum score
-**20**
+**23**
