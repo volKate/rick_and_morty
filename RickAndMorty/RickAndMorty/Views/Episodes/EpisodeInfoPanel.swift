@@ -7,11 +7,24 @@
 
 import UIKit
 
+protocol FavouriteIconDelegate {
+  func didTapFavouriteIcon(id: Int, indexPath: IndexPath)
+}
+
 class EpisodeInfoPanel: UIView {
   var bgColor: UIColor? = UIColor(named: "gray_main")
   var cornerRadius: CGFloat = 16.0
   var insetX: CGFloat = 18.0
   var insetY: CGFloat = 14.0
+
+  var delegate: FavouriteIconDelegate?
+
+  var isFavourite = false {
+    didSet {
+      heartIcon.image = UIImage(systemName: isFavourite ? "heart.fill" : "heart")
+      heartIcon.tintColor = isFavourite ? UIColor(named: "red_main") : .accent
+    }
+  }
 
   var tvIcon: UIImageView = {
     let icon = UIImage(systemName: "play.tv")?
@@ -38,6 +51,7 @@ class EpisodeInfoPanel: UIView {
   var heartIcon: UIImageView = {
     let icon = UIImage(systemName: "heart")
     let view = UIImageView(image: icon)
+    view.isUserInteractionEnabled = true
     view.translatesAutoresizingMaskIntoConstraints = false
 
     return view
@@ -52,6 +66,21 @@ class EpisodeInfoPanel: UIView {
 
     setupSubviews()
     setupConstraints()
+    setupHeartIconTapGesture()
+  }
+
+  private func setupHeartIconTapGesture() {
+    let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapHeartIcon(_:)))
+    heartIcon.addGestureRecognizer(gesture)
+  }
+
+  @objc private func didTapHeartIcon(_ sender: UITapGestureRecognizer) {
+    if let icon = sender.view,
+       let cell = icon.nearestAncestor(ofType: EpisodeCell.self),
+       let indexPath = cell.indexPathForCell,
+       let id = cell.id {
+      delegate?.didTapFavouriteIcon(id: id, indexPath: indexPath)
+    }
   }
 
   private func setupSubviews() {
@@ -83,3 +112,11 @@ class EpisodeInfoPanel: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 }
+
+extension UIView {
+    func nearestAncestor<T>(ofType type: T.Type) -> T? {
+        if let me = self as? T { return me }
+        return superview?.nearestAncestor(ofType: type)
+    }
+}
+

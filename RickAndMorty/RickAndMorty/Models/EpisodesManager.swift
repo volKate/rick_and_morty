@@ -46,6 +46,7 @@ struct EpisodesManager {
         if let data, let data = parseJSON(episodesData: data) {
           let episodes = data.results.map { data in
             EpisodeModel(
+              id: data.id,
               episode: data.episode,
               name: data.name,
               character: data.characters.randomElement() ?? ""

@@ -11,7 +11,10 @@ class EpisodeCell: UICollectionViewCell {
   var card = EpisodeCardView()
   var characterManager = CharacterManager()
   var character: CharacterModel?
-  var navVC: UINavigationController!
+  var navVC: UINavigationController?
+
+  var id: Int?
+  var indexPathForCell: IndexPath?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -32,7 +35,7 @@ class EpisodeCell: UICollectionViewCell {
       let detailsVC = DetailsViewController()
       detailsVC.character = character
       detailsVC.characterImage = card.characterImage.image
-      navVC.pushViewController(detailsVC, animated: true)
+      navVC?.pushViewController(detailsVC, animated: true)
     }
   }
 

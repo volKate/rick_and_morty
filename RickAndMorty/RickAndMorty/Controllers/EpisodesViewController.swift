@@ -11,6 +11,7 @@ class EpisodesViewController: UIViewController {
   private let episodesView = EpisodesView()
   private var episodesManager = EpisodesManager()
   private var nextPageUrl: String?
+  private var favouriteEpisodes: Set<Int> = Set()
 
   var episodes: [EpisodeModel] = []
 
@@ -50,6 +51,12 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
     let name = "\(episode.name) | \(episode.episode)"
     cell.updateEpisodeName(name)
     cell.updateCharacterUrl(episode.character)
+
+    cell.indexPathForCell = indexPath
+    cell.id = episode.id
+    cell.card.episodeInfoPanel.isFavourite = favouriteEpisodes.contains(episode.id)
+    cell.card.episodeInfoPanel.delegate = self
+
     return cell
   }
 
@@ -93,4 +100,24 @@ extension EpisodesViewController: EpisodesManagerDelegate {
     // handle error
   }
 
+}
+
+extension EpisodesViewController: FavouriteIconDelegate {
+  func didTapFavouriteIcon(id: Int, indexPath: IndexPath) {
+    let isFavourite = favouriteEpisodes.contains(id)
+    if isFavourite {
+      favouriteEpisodes.remove(id)
+    } else {
+      favouriteEpisodes.insert(id)
+    }
+
+    // this code works, but reload is visible
+    episodesView.collection.reloadItems(at: [indexPath])
+
+    //    Code below updates the value, but not UI, why?
+
+    //    let cell = episodesView.collection.dequeueReusableCell(withReuseIdentifier: "episode_cell", for: indexPath) as? EpisodeCell
+    //    cell?.card.episodeInfoPanel.isFavourite = !isFavourite
+
+  }
 }
