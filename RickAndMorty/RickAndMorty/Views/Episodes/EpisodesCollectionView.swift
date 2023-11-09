@@ -14,8 +14,6 @@ class EpisodesCollectionView: UICollectionView {
     super.init(frame: .zero, collectionViewLayout: layout)
 
     translatesAutoresizingMaskIntoConstraints = false
-
-    register(EpisodeCell.self, forCellWithReuseIdentifier: "episode_cell")
   }
   
   required init?(coder: NSCoder) {

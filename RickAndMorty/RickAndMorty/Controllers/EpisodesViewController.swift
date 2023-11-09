@@ -20,6 +20,7 @@ class EpisodesViewController: UIViewController {
     episodesManager.delegate = self
     episodesView.collection.dataSource = self
     episodesView.collection.delegate = self
+    episodesView.collection.register(EpisodeCell.self, forCellWithReuseIdentifier: "episode_cell")
 
     episodesManager.loadEpisodes()
 
@@ -90,8 +91,8 @@ extension EpisodesViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension EpisodesViewController: EpisodesManagerDelegate {
-  func didLoadEpisodes(_ episodesManager: EpisodesManager, episodes: [EpisodeModel], pagesInfo: EpisodesData.Info) {
-    nextPageUrl = pagesInfo.next
+  func didLoadEpisodes(_ episodesManager: EpisodesManager, episodes: [EpisodeModel], pagesInfo: EpisodesData.Info?) {
+    nextPageUrl = pagesInfo?.next
     DispatchQueue.main.async {
       self.episodes += episodes
       self.episodesView.collection.reloadData()

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EpisodesManagerDelegate {
-  func didLoadEpisodes(_ episodesManager: EpisodesManager, episodes: [EpisodeModel], pagesInfo: EpisodesData.Info)
+  func didLoadEpisodes(_ episodesManager: EpisodesManager, episodes: [EpisodeModel], pagesInfo: EpisodesData.Info?)
   func didEndupWithError(error: Error)
 }
 
@@ -22,17 +22,26 @@ struct EpisodesManager {
 
   mutating func loadEpisodes() {
     previousPageUrl = episodeUrl
-    fetchData(for: episodeUrl)
+    fetchExtendedData(for: episodeUrl)
+  }
+
+  mutating func loadEpisodes(ids: [Int]) {
+    if ids.isEmpty {
+      return
+    }
+    previousPageUrl = episodeUrl
+    let urlString = episodeUrl + "/\(ids.map { "\($0)" }.joined(separator: ","))"
+    fetchSimplifiedData(for: urlString)
   }
 
   mutating func loadEpisodes(nextPageUrl: String?) {
     if nextPageUrl != nil && nextPageUrl != previousPageUrl {
       previousPageUrl = nextPageUrl
-      fetchData(for: nextPageUrl!)
+      fetchExtendedData(for: nextPageUrl!)
     }
   }
 
-  private func fetchData(for url: String) {
+  private func fetchExtendedData(for url: String) {
     if let url = URL(string: url) {
       let session = URLSession(configuration: .default)
 
@@ -43,8 +52,37 @@ struct EpisodesManager {
           return
         }
 
-        if let data, let data = parseJSON(episodesData: data) {
-          let episodes = data.results.map { data in
+        if let data, let data: EpisodesData = parseJSON(episodesData: data) {
+            let episodes = data.results.map { data in
+              EpisodeModel(
+                id: data.id,
+                episode: data.episode,
+                name: data.name,
+                character: data.characters.randomElement() ?? ""
+              )
+            }
+
+          delegate?.didLoadEpisodes(self, episodes: episodes, pagesInfo: data.info)
+        }
+      }
+
+      task.resume()
+    }
+  }
+
+  private func fetchSimplifiedData(for url: String) {
+    if let url = URL(string: url) {
+      let session = URLSession(configuration: .default)
+
+      let task = session.dataTask(with: url) { data, response, error in
+        if error != nil {
+          print("error requesting source")
+          delegate?.didEndupWithError(error: error!)
+          return
+        }
+
+        if let data, let data: [Episode] = parseJSON(episodesData: data) {
+          let episodes = data.map { data in
             EpisodeModel(
               id: data.id,
               episode: data.episode,
@@ -52,7 +90,8 @@ struct EpisodesManager {
               character: data.characters.randomElement() ?? ""
             )
           }
-          delegate?.didLoadEpisodes(self, episodes: episodes, pagesInfo: data.info)
+
+          delegate?.didLoadEpisodes(self, episodes: episodes, pagesInfo: nil)
         }
       }
 
@@ -64,6 +103,18 @@ struct EpisodesManager {
     let decoder = JSONDecoder()
     do {
       let decodedData = try decoder.decode(EpisodesData.self, from: episodesData)
+      return decodedData
+    } catch {
+      print("error decoding data")
+      delegate?.didEndupWithError(error: error)
+      return nil
+    }
+  }
+
+  private func parseJSON(episodesData: Data) -> [Episode]? {
+    let decoder = JSONDecoder()
+    do {
+      let decodedData = try decoder.decode([Episode].self, from: episodesData)
       return decodedData
     } catch {
       print("error decoding data")
