@@ -8,11 +8,12 @@
 import UIKit
 
 class FavouritesViewController: UIViewController {
-  
+  var appManager: AppManager?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .systemPink
+    view.backgroundColor = .systemBackground
   }
   
 }

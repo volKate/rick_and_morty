@@ -11,7 +11,7 @@ class EpisodesViewController: UIViewController {
   private let episodesView = EpisodesView()
   private var episodesManager = EpisodesManager()
   private var nextPageUrl: String?
-  private var favouriteEpisodes: Set<Int> = Set()
+  var appManager: AppManager?
 
   var episodes: [EpisodeModel] = []
 
@@ -54,7 +54,9 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
 
     cell.indexPathForCell = indexPath
     cell.id = episode.id
-    cell.card.episodeInfoPanel.isFavourite = favouriteEpisodes.contains(episode.id)
+    if let favourites = appManager?.favourites {
+      cell.card.episodeInfoPanel.isFavourite = favourites.contains(episode.id)
+    }
     cell.card.episodeInfoPanel.delegate = self
 
     return cell
@@ -102,13 +104,16 @@ extension EpisodesViewController: EpisodesManagerDelegate {
 
 }
 
+
 extension EpisodesViewController: FavouriteIconDelegate {
   func didTapFavouriteIcon(id: Int, indexPath: IndexPath) {
-    let isFavourite = favouriteEpisodes.contains(id)
-    if isFavourite {
-      favouriteEpisodes.remove(id)
-    } else {
-      favouriteEpisodes.insert(id)
+    if let appManager {
+      let isFavourite = appManager.favourites.contains(id)
+      if isFavourite {
+        appManager.removeEpisodeFromFavourites(id: id)
+      } else {
+        appManager.addEpisodeToFavourites(id: id)
+      }
     }
 
     // this code works, but reload is visible

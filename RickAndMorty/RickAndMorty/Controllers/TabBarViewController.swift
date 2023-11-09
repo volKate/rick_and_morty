@@ -8,6 +8,7 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+  var appManager = AppManager()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,6 +17,7 @@ class TabBarViewController: UITabBarController {
 
   private func setupViews() {
     let episodesVC = EpisodesViewController()
+    episodesVC.appManager = appManager
     let episodesNavVC = UINavigationController(rootViewController: episodesVC)
     episodesNavVC.tabBarItem = UITabBarItem(
       title: nil,
@@ -24,6 +26,7 @@ class TabBarViewController: UITabBarController {
     )
 
     let favouritesVC = FavouritesViewController()
+    favouritesVC.appManager = appManager
     let favouritesNavVC = UINavigationController(rootViewController: favouritesVC)
     favouritesNavVC.tabBarItem = UITabBarItem(
       title: nil,

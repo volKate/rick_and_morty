@@ -34,6 +34,7 @@
 		DA66C3BF2AFC1D690088726B /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66C3BE2AFC1D690088726B /* DetailsHeaderView.swift */; };
 		DAFE73552AFC2C4F00A867FE /* DetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */; };
 		DAFE73572AFC2DDA00A867FE /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */; };
+		DAFE73592AFD8D1800A867FE /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73582AFD8D1800A867FE /* AppModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		DA66C3BE2AFC1D690088726B /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
 		DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableView.swift; sourceTree = "<group>"; };
 		DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		DAFE73582AFD8D1800A867FE /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				DA66C3AA2AF814FC0088726B /* CharacterData.swift */,
 				DA66C3AC2AF8157F0088726B /* EpisodesManager.swift */,
 				DA66C3AE2AF81BA90088726B /* CharacterManager.swift */,
+				DAFE73582AFD8D1800A867FE /* AppModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				DA0541B22AF6D27700A08F9B /* AppDelegate.swift in Sources */,
 				DA66C3A22AF805070088726B /* EpisodesView.swift in Sources */,
 				DA66C3BF2AFC1D690088726B /* DetailsHeaderView.swift in Sources */,
+				DAFE73592AFD8D1800A867FE /* AppModel.swift in Sources */,
 				DAFE73572AFC2DDA00A867FE /* DetailsCell.swift in Sources */,
 				DA66C3A52AF80F4B0088726B /* EpisodeModel.swift in Sources */,
 				DA66C3B62AFAB2410088726B /* CardView.swift in Sources */,
