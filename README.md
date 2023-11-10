@@ -30,6 +30,8 @@ Test project
 - Implement setting random character name and Image +3
 - Implement pagination for episodes. More episodes are loaded when close to scroll bottom +3
 - On character image tap open details page +1
+- Tap on heart icon makes it red +1
+- Tap on heart icon adds episode to "Favourites", next tap on same icon makes it blue outlined and removes episode from "Favourites" +3
 
 ### Details page
 - Implment Details page +1
@@ -42,4 +44,4 @@ Test project
 - On character image tap open details page +1
 
 ## Features sum score
-**23**
+**27**
