@@ -72,6 +72,9 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: false)
     navigationItem.backButtonTitle = "Go back".uppercased()
+
+    // TODO: how can I reload only cells that are in view based on changed isFavourite
+    episodesView.collection.reloadData()
   }
 }
 

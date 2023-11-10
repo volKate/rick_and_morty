@@ -114,9 +114,9 @@ class EpisodeInfoPanel: UIView {
 }
 
 extension UIView {
-    func nearestAncestor<T>(ofType type: T.Type) -> T? {
-        if let me = self as? T { return me }
-        return superview?.nearestAncestor(ofType: type)
-    }
+  func nearestAncestor<T>(ofType type: T.Type) -> T? {
+    if let me = self as? T { return me }
+    return superview?.nearestAncestor(ofType: type)
+  }
 }
 

@@ -27,6 +27,7 @@ struct EpisodesManager {
 
   mutating func loadEpisodes(ids: [Int]) {
     if ids.isEmpty {
+      delegate?.didLoadEpisodes(self, episodes: [], pagesInfo: nil)
       return
     }
     previousPageUrl = episodeUrl
@@ -53,14 +54,14 @@ struct EpisodesManager {
         }
 
         if let data, let data: EpisodesData = parseJSON(episodesData: data) {
-            let episodes = data.results.map { data in
-              EpisodeModel(
-                id: data.id,
-                episode: data.episode,
-                name: data.name,
-                character: data.characters.randomElement() ?? ""
-              )
-            }
+          let episodes = data.results.map { data in
+            EpisodeModel(
+              id: data.id,
+              episode: data.episode,
+              name: data.name,
+              character: data.characters.randomElement() ?? ""
+            )
+          }
 
           delegate?.didLoadEpisodes(self, episodes: episodes, pagesInfo: data.info)
         }
@@ -105,7 +106,7 @@ struct EpisodesManager {
       let decodedData = try decoder.decode(EpisodesData.self, from: episodesData)
       return decodedData
     } catch {
-      print("error decoding data")
+      print("error decoding extended data")
       delegate?.didEndupWithError(error: error)
       return nil
     }
@@ -117,7 +118,7 @@ struct EpisodesManager {
       let decodedData = try decoder.decode([Episode].self, from: episodesData)
       return decodedData
     } catch {
-      print("error decoding data")
+      print("error decoding simplified data")
       delegate?.didEndupWithError(error: error)
       return nil
     }
