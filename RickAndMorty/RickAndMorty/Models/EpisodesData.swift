@@ -14,6 +14,7 @@ struct EpisodesData: Decodable {
   struct Info: Decodable {
     let pages: Int
     let next: String?
+    let prev: String?
   }
 }
 

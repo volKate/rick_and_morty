@@ -8,7 +8,6 @@
 import UIKit
 
 class CardView: UIView {
-  private var shadowLayer: CAShapeLayer!
   private let containerView: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false

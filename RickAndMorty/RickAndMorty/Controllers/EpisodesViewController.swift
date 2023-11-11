@@ -20,6 +20,7 @@ class EpisodesViewController: UIViewController {
     episodesManager.delegate = self
     episodesView.collection.dataSource = self
     episodesView.collection.delegate = self
+    episodesView.searchView.input.delegate = self
     episodesView.collection.register(EpisodeCell.self, forCellWithReuseIdentifier: "episode_cell")
 
     episodesManager.loadEpisodes()
@@ -96,8 +97,13 @@ extension EpisodesViewController: UICollectionViewDelegateFlowLayout {
 extension EpisodesViewController: EpisodesManagerDelegate {
   func didLoadEpisodes(_ episodesManager: EpisodesManager, episodes: [EpisodeModel], pagesInfo: EpisodesData.Info?) {
     nextPageUrl = pagesInfo?.next
+    let hasPrevPage = pagesInfo?.prev != nil
     DispatchQueue.main.async {
-      self.episodes += episodes
+      if hasPrevPage {
+        self.episodes += episodes
+      } else {
+        self.episodes = episodes
+      }
       self.episodesView.collection.reloadData()
     }
   }
@@ -128,5 +134,35 @@ extension EpisodesViewController: FavouriteIconDelegate {
     //    let cell = episodesView.collection.dequeueReusableCell(withReuseIdentifier: "episode_cell", for: indexPath) as? EpisodeCell
     //    cell?.card.episodeInfoPanel.isFavourite = !isFavourite
 
+  }
+}
+
+extension EpisodesViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.endEditing(true)
+    return true
+  }
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    let searchStr = textField.text!
+    if searchStr.isEmpty {
+      episodesManager.loadEpisodes()
+    } else {
+      episodesManager.loadEpisodes(filter: searchStr)
+    }
+
+    // FE filtering doesn't make much sense with BE pagination. Not all items may be loaded.
+    // Yet BE is not configured to work with OR filters
+    //    if searchStr.isEmpty {
+    //      filteredEpisodes = episodes
+    //    } else {
+    //      filteredEpisodes = episodes.filter({ episode in
+    //        let episodeName = episode.name.lowercased()
+    //        let episodeNum = episode.episode.lowercased()
+    //        let filter = searchStr.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+    //
+    //        return episodeName.contains(filter) || episodeNum.contains(filter)
+    //      })
+    //    }
   }
 }

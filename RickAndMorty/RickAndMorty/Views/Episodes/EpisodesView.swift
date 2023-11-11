@@ -17,6 +17,7 @@ class EpisodesView: UIView {
   }()
 
   let collection = EpisodesCollectionView()
+  let searchView = SearchView()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -28,6 +29,7 @@ class EpisodesView: UIView {
 
   private func setupSubviews() {
     addSubview(logo)
+    addSubview(searchView)
     addSubview(collection)
   }
 
@@ -38,8 +40,14 @@ class EpisodesView: UIView {
       logo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
       logo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24),
 
+      // search
+      searchView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 48),
+      searchView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
+      searchView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24),
+
+
       // collection constraints
-      collection.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 48),
+      collection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 24),
       collection.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
       collection.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
       collection.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)

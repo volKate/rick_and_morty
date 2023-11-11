@@ -25,6 +25,11 @@ struct EpisodesManager {
     fetchExtendedData(for: episodeUrl)
   }
 
+  mutating func loadEpisodes(filter: String) {
+    previousPageUrl = episodeUrl
+    fetchExtendedData(for: "\(episodeUrl)/?episode=\(filter)")
+  }
+
   mutating func loadEpisodes(ids: [Int]) {
     if ids.isEmpty {
       delegate?.didLoadEpisodes(self, episodes: [], pagesInfo: nil)

@@ -35,6 +35,7 @@
 		DAFE73552AFC2C4F00A867FE /* DetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */; };
 		DAFE73572AFC2DDA00A867FE /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */; };
 		DAFE73592AFD8D1800A867FE /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73582AFD8D1800A867FE /* AppModel.swift */; };
+		DAFE735B2AFFF17600A867FE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE735A2AFFF17600A867FE /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableView.swift; sourceTree = "<group>"; };
 		DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		DAFE73582AFD8D1800A867FE /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		DAFE735A2AFFF17600A867FE /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				DA66C3BE2AFC1D690088726B /* DetailsHeaderView.swift */,
 				DAFE73542AFC2C4F00A867FE /* DetailsTableView.swift */,
 				DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */,
+				DAFE735A2AFFF17600A867FE /* SearchView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				DA0541CE2AF7CC0000A08F9B /* LaunchScreenViewController.swift in Sources */,
 				DA66C3992AF7F9470088726B /* TabBarViewController.swift in Sources */,
 				DA0541B42AF6D27700A08F9B /* SceneDelegate.swift in Sources */,
+				DAFE735B2AFFF17600A867FE /* SearchView.swift in Sources */,
 				DA0541D02AF7CC3600A08F9B /* LaunchScreenView.swift in Sources */,
 				DAFE73552AFC2C4F00A867FE /* DetailsTableView.swift in Sources */,
 				DA66C3BD2AFC1CF90088726B /* DetailsView.swift in Sources */,
