@@ -12,6 +12,10 @@ protocol EpisodesManagerDelegate {
   func didEndupWithError(error: Error)
 }
 
+enum FilterOption: String, CaseIterable {
+  case name, episode
+}
+
 struct EpisodesManager {
 
   var delegate: EpisodesManagerDelegate?
@@ -25,9 +29,9 @@ struct EpisodesManager {
     fetchExtendedData(for: episodeUrl)
   }
 
-  mutating func loadEpisodes(filter: String) {
+  mutating func loadEpisodes(filter: FilterOption, str: String) {
     previousPageUrl = episodeUrl
-    fetchExtendedData(for: "\(episodeUrl)/?episode=\(filter)")
+    fetchExtendedData(for: "\(episodeUrl)/?\(filter.rawValue)=\(str)")
   }
 
   mutating func loadEpisodes(ids: [Int]) {

@@ -14,6 +14,11 @@ class EpisodesViewController: UIViewController {
   var appManager: AppManager?
 
   var episodes: [EpisodeModel] = []
+  var filterOption: FilterOption = FilterOption.episode {
+    didSet {
+      episodesView.filterSelect.selectedFilter = filterOption
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,6 +26,7 @@ class EpisodesViewController: UIViewController {
     episodesView.collection.dataSource = self
     episodesView.collection.delegate = self
     episodesView.searchView.input.delegate = self
+    episodesView.filterSelect.delegate = self
     episodesView.collection.register(EpisodeCell.self, forCellWithReuseIdentifier: "episode_cell")
 
     episodesManager.loadEpisodes()
@@ -29,6 +35,7 @@ class EpisodesViewController: UIViewController {
   }
 
   private func setupSubviews() {
+    episodesView.filterSelect.selectedFilter = filterOption
     view.addSubview(episodesView)
 
     NSLayoutConstraint.activate([
@@ -148,7 +155,7 @@ extension EpisodesViewController: UITextFieldDelegate {
     if searchStr.isEmpty {
       episodesManager.loadEpisodes()
     } else {
-      episodesManager.loadEpisodes(filter: searchStr)
+      episodesManager.loadEpisodes(filter: filterOption, str: searchStr)
     }
 
     // FE filtering doesn't make much sense with BE pagination. Not all items may be loaded.
@@ -165,4 +172,13 @@ extension EpisodesViewController: UITextFieldDelegate {
     //      })
     //    }
   }
+}
+
+extension EpisodesViewController: FilterSelectDelegate {
+  func didUpateFilter(_ filter: String) {
+    if let option = FilterOption.init(rawValue: filter) {
+      filterOption = option
+    }
+  }
+
 }

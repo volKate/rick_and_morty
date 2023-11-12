@@ -36,6 +36,7 @@
 		DAFE73572AFC2DDA00A867FE /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */; };
 		DAFE73592AFD8D1800A867FE /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE73582AFD8D1800A867FE /* AppModel.swift */; };
 		DAFE735B2AFFF17600A867FE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE735A2AFFF17600A867FE /* SearchView.swift */; };
+		DAFE735D2B0007F200A867FE /* FilterSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE735C2B0007F200A867FE /* FilterSelectButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		DAFE73562AFC2DDA00A867FE /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		DAFE73582AFD8D1800A867FE /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		DAFE735A2AFFF17600A867FE /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DAFE735C2B0007F200A867FE /* FilterSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				DA66C3B22AF98CF60088726B /* EpisodeCell.swift */,
 				DA66C3B72AFAC0510088726B /* EpisodeCardView.swift */,
 				DA66C3B92AFACFEB0088726B /* EpisodeInfoPanel.swift */,
+				DAFE735C2B0007F200A867FE /* FilterSelectButton.swift */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				DA66C39D2AF7F9F20088726B /* FavouritesViewController.swift in Sources */,
 				DA0541BC2AF6D27700A08F9B /* RickAndMorty.xcdatamodeld in Sources */,
+				DAFE735D2B0007F200A867FE /* FilterSelectButton.swift in Sources */,
 				DA66C39F2AF7FF9F0088726B /* DetailsViewController.swift in Sources */,
 				DA66C3AD2AF8157F0088726B /* EpisodesManager.swift in Sources */,
 				DA0541B22AF6D27700A08F9B /* AppDelegate.swift in Sources */,

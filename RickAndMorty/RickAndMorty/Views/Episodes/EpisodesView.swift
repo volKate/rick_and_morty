@@ -18,6 +18,7 @@ class EpisodesView: UIView {
 
   let collection = EpisodesCollectionView()
   let searchView = SearchView()
+  let filterSelect = FilterSelectButton()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -30,6 +31,7 @@ class EpisodesView: UIView {
   private func setupSubviews() {
     addSubview(logo)
     addSubview(searchView)
+    addSubview(filterSelect)
     addSubview(collection)
   }
 
@@ -40,11 +42,15 @@ class EpisodesView: UIView {
       logo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
       logo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24),
 
+      filterSelect.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 48),
+      filterSelect.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
+      filterSelect.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24),
+      filterSelect.heightAnchor.constraint(equalToConstant: 54.0),
+
       // search
-      searchView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 48),
+      searchView.topAnchor.constraint(equalTo: filterSelect.bottomAnchor, constant: 12),
       searchView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
       searchView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24),
-
 
       // collection constraints
       collection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 24),
