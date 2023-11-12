@@ -32,6 +32,8 @@ Test project
 - On character image tap open details page +1
 - Tap on heart icon makes it red +1
 - Tap on heart icon adds episode to "Favourites", next tap on same icon makes it blue outlined and removes episode from "Favourites" +3
+- Implement search by episode number +2
+- Filter: add ability to choose by which field episodes should be filtered (I implement by name and episode) +3
 
 ### Details page
 - Implment Details page +1
@@ -42,6 +44,7 @@ Test project
 - Implement screen +1
 - Tap on heart should remove episode from favourites +1 (I let episodes remain on the creen from UX point of view, but they are removed from array and on re-entering the page, they will no longer appear on screen)
 - On character image tap open details page +1
+- On switching app off and on, favourite episodes should persist +3
 
 ## Features sum score
-**27**
+**35**
